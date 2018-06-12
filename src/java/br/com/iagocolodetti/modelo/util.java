@@ -1,0 +1,9 @@
+package br.com.iagocolodetti.modelo;
+
+import java.nio.charset.StandardCharsets;
+
+public class util {
+    static public String decodificar(String codificado) {
+        return (new String(codificado.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8));
+    }
+}
