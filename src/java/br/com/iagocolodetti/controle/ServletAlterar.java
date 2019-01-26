@@ -3,8 +3,6 @@ package br.com.iagocolodetti.controle;
 import br.com.iagocolodetti.modelo.Contato;
 import br.com.iagocolodetti.modelo.ContatoExisteException;
 import br.com.iagocolodetti.modelo.ContatoNaoExisteException;
-import br.com.iagocolodetti.modelo.ManipularCSV;
-import br.com.iagocolodetti.modelo.util;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -43,8 +41,7 @@ public class ServletAlterar extends HttpServlet {
         
         if (!request.getSession().isNew() && request.getSession().getAttribute("usuarioSessao") != null) {
             try {
-                ManipularCSV mcsv = new ManipularCSV();
-                mcsv.alterarContato(
+                CSV.alterarContato(
                         new Contato(util.decodificar(request.getParameter("nomeatual")), util.decodificar(request.getParameter("emailatual")), util.decodificar(request.getParameter("telefoneatual"))),
                         new Contato(util.decodificar(request.getParameter("novonome")), util.decodificar(request.getParameter("novoemail")), util.decodificar(request.getParameter("novotelefone"))));
                 request.setAttribute("sucesso", "Contato alterado com sucesso.");

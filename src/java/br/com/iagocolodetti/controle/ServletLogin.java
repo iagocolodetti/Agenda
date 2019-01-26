@@ -1,7 +1,5 @@
 package br.com.iagocolodetti.controle;
 
-import br.com.iagocolodetti.modelo.ManipularCSV;
-import br.com.iagocolodetti.modelo.util;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

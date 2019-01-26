@@ -2,8 +2,6 @@ package br.com.iagocolodetti.controle;
 
 import br.com.iagocolodetti.modelo.ContatoExisteException;
 import br.com.iagocolodetti.modelo.Contato;
-import br.com.iagocolodetti.modelo.ManipularCSV;
-import br.com.iagocolodetti.modelo.util;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,8 +30,7 @@ public class ServletNovo extends HttpServlet {
         
         if (!request.getSession().isNew() && request.getSession().getAttribute("usuarioSessao") != null) {
             try {
-                ManipularCSV mcsv = new ManipularCSV();
-                mcsv.adicionarContato(new Contato(util.decodificar(request.getParameter("nome")), util.decodificar(request.getParameter("email")), util.decodificar(request.getParameter("telefone"))));
+                CSV.adicionarContato(new Contato(util.decodificar(request.getParameter("nome")), util.decodificar(request.getParameter("email")), util.decodificar(request.getParameter("telefone"))));
                 request.setAttribute("sucesso", "Novo contato cadastrado com sucesso.");
             }
             catch (IllegalArgumentException e) {

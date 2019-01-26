@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="container-fluid">
@@ -40,7 +40,7 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-2 col-xs-offset-1 col-sm-offset-4 col-md-offset-4 col-lg-offset-5 text-center">
-                        <button type="submit" class="btn btn-success">Login</button>
+                        <button type="submit" class="btn btn-success btn-largura-padrao">Login</button>
                     </div>
                 </div>
                 <c:if test="${erro != null}">

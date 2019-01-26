@@ -16,3 +16,12 @@ btn-padding {
     padding-right: 1.8em;
     padding-left: 1.8em;
 }
+
+.btn-largura-padrao {
+    width: 10.0em !important;
+}
+
+.btn-xs {
+    padding-right: 1.2em !important;
+    padding-left: 1.2em !important;
+}

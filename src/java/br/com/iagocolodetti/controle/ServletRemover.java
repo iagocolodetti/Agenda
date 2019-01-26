@@ -2,8 +2,6 @@ package br.com.iagocolodetti.controle;
 
 import br.com.iagocolodetti.modelo.ContatoNaoExisteException;
 import br.com.iagocolodetti.modelo.Contato;
-import br.com.iagocolodetti.modelo.ManipularCSV;
-import br.com.iagocolodetti.modelo.util;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +16,7 @@ public class ServletRemover extends HttpServlet {
         
         if (!request.getSession().isNew() && request.getSession().getAttribute("usuarioSessao") != null) {
             try {
-                ManipularCSV mcsv = new ManipularCSV();
-                mcsv.removerContato(new Contato(util.decodificar(request.getParameter("nome")), util.decodificar(request.getParameter("email")), util.decodificar(request.getParameter("telefone"))));
+                CSV.removerContato(new Contato(util.decodificar(request.getParameter("nome")), util.decodificar(request.getParameter("email")), util.decodificar(request.getParameter("telefone"))));
                 request.setAttribute("sucesso", "Contato removido com sucesso.");
             }
             catch (ContatoNaoExisteException e) {

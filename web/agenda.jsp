@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="app.js" type="text/javascript"></script>
-        <link href="estilos.css" rel="stylesheet" type="text/css"/>
+        <script src="js/app.js" type="text/javascript"></script>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="container-fluid">
@@ -51,11 +51,11 @@
                                         <td>${contato.telefone}</td>
                                         <td>
                                             <a href='javascript:confirmaAlterar("${contato.nome}","${contato.email}","${contato.telefone}");'
-                                               class="btn btn-info btn-xs" style="padding-right: 1.2em; padding-left: 1.2em;">X</a>
+                                               class="btn btn-info btn-xs">X</a>
                                         </td>
                                         <td>
                                             <a href='javascript:confirmaRemover("${contato.nome}","${contato.email}","${contato.telefone}");'
-                                               class="btn btn-danger btn-xs" style="padding-right: 1.2em; padding-left: 1.2em;">X</a>
+                                               class="btn btn-danger btn-xs">X</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

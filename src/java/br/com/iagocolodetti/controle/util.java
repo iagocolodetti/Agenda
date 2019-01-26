@@ -1,4 +1,4 @@
-package br.com.iagocolodetti.modelo;
+package br.com.iagocolodetti.controle;
 
 import java.nio.charset.StandardCharsets;
 
