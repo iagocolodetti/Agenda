@@ -22,7 +22,7 @@ public class FiltroAutenticacao implements Filter {
             throws IOException, ServletException {
         
         HttpServletRequest rq = (HttpServletRequest)request;
-        if (rq.getSession().isNew() || rq.getSession().getAttribute("usuarioSessao") == null) {
+        if (rq.getSession().isNew() || rq.getSession().getAttribute("usuario") == null) {
             rq.setAttribute("erro", "Sessão expirada, faça o login novamente.");
             rq.getSession().invalidate();
             rq.getRequestDispatcher("index.jsp").forward(request, response);

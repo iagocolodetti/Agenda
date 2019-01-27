@@ -32,6 +32,7 @@
                 </div>
             </div>
             <form action="alterar" method="POST">
+                <input type="hidden" id="id" name="id" value="${id}" readonly>  
                 <div class="row">
                     <div class="form-group col-xs-10 col-sm-8 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-3 text-center">
                         <label for="nomeatual">Nome:</label>

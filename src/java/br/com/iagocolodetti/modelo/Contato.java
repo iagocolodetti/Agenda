@@ -2,12 +2,32 @@ package br.com.iagocolodetti.modelo;
 
 public class Contato implements java.io.Serializable {
     
+    private int id;
     private String nome, email, telefone;
 
+    public Contato() {
+        
+    }
+    
     public Contato(String nome, String email, String telefone) {
-        setNome(nome);
-        setEmail(email);
-        setTelefone(telefone);
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+    }
+    
+    public Contato(int id, String nome, String email, String telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+    }
+    
+    public int getId() {
+        return id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
     }
     
     public String getNome() {

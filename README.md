@@ -1,14 +1,17 @@
 # Agenda (Java WEB)
 
-Projeto criado como atividade prática supervisionada para disciplina de "Desenvolvimento de Aplicações Web".
-
 Projeto desenvolvido no NetBeans utilizando a linguagem Java para WEB.
 
-A aplicação simula um login e a partir daí redireciona para uma agenda de contatos no qual poderão ser feitas as seguintes operações: inserção, alteração e remoção de contatos em um arquivo .csv.
-Além dessas operações básicas também é possível efetuar o logout e um filtro é usado para verificar a cada requisição se o usuário ainda está logado e autenticado. 
+A aplicação simula uma agenda online com um cadastro/login de usuário, no qual cada usuário pode ter sua própria agenda.
+É feita uma integração com o banco de dados MySQL para o armazenamento tanto de usuários quanto de contatos para alimentar as agendas.
+
+Além do cadastro e login de usuários também é possível realizar as seguintes operações: inserção, leitura, alteração e remoção de contatos no banco.
+Também é possível efetuar o logout e um filtro é usado para verificar a cada requisição se o usuário ainda está logado e autenticado. 
 
 Aplicação criada com o padrão MVC, utilizando classe Java como modelo, página JSP como view (com Bootstrap 3 e JSTL) e Servlet como controller.
 
 * Downloads: https://github.com/iagocolodetti/Agenda/releases
-   * [Arquivo de Implantaçao](https://github.com/iagocolodetti/Agenda/releases/download/v1.1/Agenda.war "Agenda.war")
-   * [Código-Fonte](https://github.com/iagocolodetti/Agenda/archive/v1.1.zip "v1.1.zip")
+   * [Arquivo de Implantaçao](https://github.com/iagocolodetti/Agenda/releases/download/v2.0/Agenda.war "Agenda.war")
+   * [Arquivo de Script MySQL](https://github.com/iagocolodetti/Agenda/releases/download/v2.0/agendadb.sql "agendadb.sql")
+   * [Bibliotecas necessárias](https://github.com/iagocolodetti/Agenda/releases/download/v2.0/bibliotecas.zip "bibliotecas.zip")
+   * [Código-Fonte](https://github.com/iagocolodetti/Agenda/archive/v2.0.zip "v2.0.zip")

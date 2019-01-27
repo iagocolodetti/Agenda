@@ -14,46 +14,32 @@
     <body>
         <div class="container-fluid">
             <div class="btn-group pull-right">
-                <form class="btn-group" action="agenda" method="GET">
-                    <button type="submit" class="btn btn-link">Agenda</button>
-                </form>
-                <form class="btn-group">
-                    <h5> | </h5>
-                </form>
-                <form class="btn-group" action="logout" method="POST">
-                    <button type="submit" class="btn btn-link">Sair</button>
+                <form class="btn-group" action="index" method="GET">
+                    <button type="submit" class="btn btn-link">Login</button>
                 </form>
             </div>
             <br>
             <br>
             <div class="row">
                 <div class="form-group col-xs-10 col-sm-8 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-3 text-center">
-                    <h4>Cadastrar Contato</h4>
+                    <h4>Cadastrar Usuário</h4>
                 </div>
             </div>
-            <form action="novo" method="POST">
+            <form action="cadastrar" method="POST">
                 <div class="row">
                     <div class="form-group col-xs-10 col-sm-8 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-3 text-center">
-                        <label for="nome">Nome:</label>
-                        <input type="text" class="form-control text-center" id="nome" placeholder="Digite o nome" name="nome"
-                               required oninvalid="this.setCustomValidity('Entre com o nome do contato.')" oninput="this.setCustomValidity('')"
+                        <label for="nome">Nome de usuário:</label>
+                        <input type="text" class="form-control text-center" id="nome" placeholder="Digite seu nome" name="nome"
+                               required oninvalid="this.setCustomValidity('Entre com seu nome de usuário.')" oninput="this.setCustomValidity('')"
                                value="${nome}">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-xs-10 col-sm-8 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-3 text-center">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control text-center" id="email" placeholder="Digite o email" name="email"
-                               required oninvalid="this.setCustomValidity('Entre com o email do contato.')" oninput="this.setCustomValidity('')"
-                               value="${email}">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-xs-10 col-sm-8 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-3 text-center">
-                        <label for="telefone">Telefone:</label>
-                        <input type="text" class="form-control text-center" id="telefone" placeholder="Digite o telefone" name="telefone"
-                               required oninvalid="this.setCustomValidity('Entre com o telefone do contato.')" oninput="this.setCustomValidity('')"
-                               value="${telefone}">
+                        <label for="senha">Senha:</label>
+                        <input type="password" class="form-control text-center" id="senha" placeholder="Digite uma senha" name="senha"
+                               required oninvalid="this.setCustomValidity('Entre com uma senha para seu acesso.')" oninput="this.setCustomValidity('')"
+                               value="${senha}">
                     </div>
                 </div>
                 <div class="row">

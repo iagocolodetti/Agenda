@@ -37,14 +37,14 @@ function sortTable(n) {
     }
 }
 
-function confirmaAlterar(nome, email, telefone) {
+function confirmaAlterar(id, nome, email, telefone) {
     if (confirm("Deseja realmente alterar os dados desse contato?")) {
-        location.href = "alterar?nome=" + nome + "&email=" + email + "&telefone=" + telefone;
+        location.href = "alterar?id=" + id + "&nome=" + nome + "&email=" + email + "&telefone=" + telefone;
     }
 }
 
-function confirmaRemover(nome, email, telefone) {
+function confirmaRemover(id, nome, email, telefone) {
     if (confirm("Deseja realmente remover esse contato?")) {
-        location.href = "remover?nome=" + nome + "&email=" + email + "&telefone=" + telefone;
+        location.href = "remover?id=" + id + "&nome=" + nome + "&email=" + email + "&telefone=" + telefone;
     }
 }

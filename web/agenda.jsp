@@ -33,7 +33,7 @@
                 </div>
             </div>
             <c:choose>
-                <c:when test="${listaContatos != null && !listaContatos.isEmpty()}">
+                <c:when test="${contatos != null && !contatos.isEmpty()}">
                     <div class="row">
                         <div class="form-group col-xs-12 col-sm-10 col-md-10 col-lg-8 col-xs-offset-0 col-sm-offset-1 col-md-offset-1 col-lg-offset-2 text-center">
                             <table id="tabelaContato" class="table table-bordered">
@@ -44,17 +44,17 @@
                                     <th class="text-center">ALTERAR</th>
                                     <th class="text-center">REMOVER</th>
                                 </thead>
-                                <c:forEach items="${listaContatos}" var="contato">
+                                <c:forEach items="${contatos}" var="contato">
                                     <tr>
                                         <td>${contato.nome}</td>
                                         <td><a href="mailto:${contato.email}">${contato.email}</a></td>
                                         <td>${contato.telefone}</td>
                                         <td>
-                                            <a href='javascript:confirmaAlterar("${contato.nome}","${contato.email}","${contato.telefone}");'
+                                            <a href='javascript:confirmaAlterar("${contato.id}","${contato.nome}","${contato.email}","${contato.telefone}");'
                                                class="btn btn-info btn-xs">X</a>
                                         </td>
                                         <td>
-                                            <a href='javascript:confirmaRemover("${contato.nome}","${contato.email}","${contato.telefone}");'
+                                            <a href='javascript:confirmaRemover("${contato.id}","${contato.nome}","${contato.email}","${contato.telefone}");'
                                                class="btn btn-danger btn-xs">X</a>
                                         </td>
                                     </tr>

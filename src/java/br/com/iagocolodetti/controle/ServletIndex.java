@@ -12,7 +12,7 @@ public class ServletIndex extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        if (!request.getSession().isNew() && request.getSession().getAttribute("usuarioSessao") != null) {
+        if (!request.getSession().isNew() && request.getSession().getAttribute("usuario") != null) {
             response.sendRedirect("agenda");
         }
         else {

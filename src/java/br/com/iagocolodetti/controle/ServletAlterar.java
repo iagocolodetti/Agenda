@@ -1,8 +1,10 @@
 package br.com.iagocolodetti.controle;
 
 import br.com.iagocolodetti.modelo.Contato;
+import br.com.iagocolodetti.modelo.ContatoDAO;
 import br.com.iagocolodetti.modelo.ContatoExisteException;
 import br.com.iagocolodetti.modelo.ContatoNaoExisteException;
+import br.com.iagocolodetti.modelo.Usuario;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,21 +16,22 @@ public class ServletAlterar extends HttpServlet {
 
     private void erro(HttpServletRequest request, String erro) {
         request.setAttribute("erro", "Erro: " + erro);
-        request.setAttribute("nomeatual", util.decodificar(request.getParameter("nomeatual")));
-        request.setAttribute("emailatual", util.decodificar(request.getParameter("emailatual")));
-        request.setAttribute("telefoneatual", util.decodificar(request.getParameter("telefoneatual")));
-        request.setAttribute("novonome", util.decodificar(request.getParameter("novonome")));
-        request.setAttribute("novoemail", util.decodificar(request.getParameter("novoemail")));
-        request.setAttribute("novotelefone", util.decodificar(request.getParameter("novotelefone")));
+        request.setAttribute("nomeatual", Util.decodificar(request.getParameter("nomeatual")));
+        request.setAttribute("emailatual", Util.decodificar(request.getParameter("emailatual")));
+        request.setAttribute("telefoneatual", Util.decodificar(request.getParameter("telefoneatual")));
+        request.setAttribute("novonome", Util.decodificar(request.getParameter("novonome")));
+        request.setAttribute("novoemail", Util.decodificar(request.getParameter("novoemail")));
+        request.setAttribute("novotelefone", Util.decodificar(request.getParameter("novotelefone")));
     }
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                
-        request.setAttribute("nomeatual", util.decodificar(request.getParameter("nome")));
-        request.setAttribute("emailatual", util.decodificar(request.getParameter("email")));
-        request.setAttribute("telefoneatual", util.decodificar(request.getParameter("telefone")));
+        
+        request.setAttribute("id", Util.decodificar(request.getParameter("id")));
+        request.setAttribute("nomeatual", Util.decodificar(request.getParameter("nome")));
+        request.setAttribute("emailatual", Util.decodificar(request.getParameter("email")));
+        request.setAttribute("telefoneatual", Util.decodificar(request.getParameter("telefone")));
         
         request.getRequestDispatcher("alterar.jsp").forward(request, response);
     }
@@ -39,17 +42,20 @@ public class ServletAlterar extends HttpServlet {
         
         RequestDispatcher rd = null;
         
-        if (!request.getSession().isNew() && request.getSession().getAttribute("usuarioSessao") != null) {
+        Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
+        
+        if (!request.getSession().isNew() && usuario != null) {
             try {
-                CSV.alterarContato(
-                        new Contato(util.decodificar(request.getParameter("nomeatual")), util.decodificar(request.getParameter("emailatual")), util.decodificar(request.getParameter("telefoneatual"))),
-                        new Contato(util.decodificar(request.getParameter("novonome")), util.decodificar(request.getParameter("novoemail")), util.decodificar(request.getParameter("novotelefone"))));
+                Contato contato = new Contato(
+                        Integer.parseInt(request.getParameter("id")),
+                        Util.decodificar(request.getParameter("novonome")),
+                        Util.decodificar(request.getParameter("novoemail")),
+                        Util.decodificar(request.getParameter("novotelefone")));
+                
+                new ContatoDAO().alterar(usuario.getId(), contato);
+                
                 request.setAttribute("sucesso", "Contato alterado com sucesso.");
                 rd = request.getRequestDispatcher("agenda");
-            }
-            catch (IllegalArgumentException e) {
-                erro(request, e.getMessage());
-                rd = request.getRequestDispatcher("alterar.jsp");
             }
             catch (ContatoExisteException e) {
                 erro(request, e.getMessage());

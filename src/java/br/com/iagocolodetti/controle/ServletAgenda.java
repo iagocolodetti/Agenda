@@ -1,6 +1,8 @@
 package br.com.iagocolodetti.controle;
 
 import br.com.iagocolodetti.modelo.Contato;
+import br.com.iagocolodetti.modelo.ContatoDAO;
+import br.com.iagocolodetti.modelo.Usuario;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
@@ -14,9 +16,13 @@ public class ServletAgenda extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        ArrayList<Contato> contatos = CSV.carregarContatos();
-        if (!contatos.isEmpty()) request.setAttribute("listaContatos", contatos);
-        else request.setAttribute("agendavazia", "A agenda ainda não possui contatos.");
+        Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
+        
+        if (!request.getSession().isNew() && usuario != null) {
+            ArrayList<Contato> contatos = new ContatoDAO().carregar(usuario);
+            if (!contatos.isEmpty()) request.setAttribute("contatos", contatos);
+            else request.setAttribute("agendavazia", "A agenda ainda não possui contatos.");
+        }
         
         request.getRequestDispatcher("agenda.jsp").forward(request, response);
     }

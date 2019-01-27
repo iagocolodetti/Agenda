@@ -1,5 +1,7 @@
 package br.com.iagocolodetti.controle;
 
+import br.com.iagocolodetti.modelo.Usuario;
+import br.com.iagocolodetti.modelo.UsuarioDAO;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,30 +12,25 @@ import javax.servlet.http.HttpSession;
 
 public class ServletLogin extends HttpServlet {
 
-    private final String USUARIO = "admin";
-    private final String SENHA = "12345";
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         RequestDispatcher rd;
         
-        String usuarioSessao = request.getParameter("usuario"), senhaSessao = request.getParameter("senha");
+        Usuario usuario = new UsuarioDAO().buscar(new Usuario(request.getParameter("nome"), request.getParameter("senha")));
         
-        if (usuarioSessao.equals(USUARIO) && senhaSessao.equals(SENHA)) {
+        if (usuario.getId() != -1) {
             HttpSession objSessao = request.getSession();
             if (objSessao == null) {
                 objSessao = request.getSession(true);
             }
-            objSessao.setAttribute("usuarioSessao", usuarioSessao);
-            objSessao.setAttribute("senhaSessao", senhaSessao);
+            objSessao.setAttribute("usuario", usuario);
             
             rd = request.getRequestDispatcher("agenda");
         }
         else {
-            request.setAttribute("usuario", util.decodificar(usuarioSessao));
-            request.setAttribute("senha", util.decodificar(senhaSessao));
+            request.setAttribute("nome", Util.decodificar(usuario.getNome()));
             request.setAttribute("erro", "Erro: Usuário e/ou senha inválido(s)");
             rd = request.getRequestDispatcher("index.jsp");
         }

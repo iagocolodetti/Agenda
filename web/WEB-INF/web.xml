@@ -56,6 +56,10 @@
         <servlet-name>ServletRemover</servlet-name>
         <servlet-class>br.com.iagocolodetti.controle.ServletRemover</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletCadastrar</servlet-name>
+        <servlet-class>br.com.iagocolodetti.controle.ServletCadastrar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletIndex</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -83,6 +87,10 @@
     <servlet-mapping>
         <servlet-name>ServletRemover</servlet-name>
         <url-pattern>/remover</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletCadastrar</servlet-name>
+        <url-pattern>/cadastrar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
