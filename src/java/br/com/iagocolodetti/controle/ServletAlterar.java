@@ -57,11 +57,7 @@ public class ServletAlterar extends HttpServlet {
                 request.setAttribute("sucesso", "Contato alterado com sucesso.");
                 rd = request.getRequestDispatcher("agenda");
             }
-            catch (ContatoExisteException e) {
-                erro(request, e.getMessage());
-                rd = request.getRequestDispatcher("alterar.jsp");
-            }
-            catch (ContatoNaoExisteException e) {
+            catch (IndexOutOfBoundsException | IllegalArgumentException | ContatoExisteException | ContatoNaoExisteException e) {
                 erro(request, e.getMessage());
                 rd = request.getRequestDispatcher("alterar.jsp");
             }

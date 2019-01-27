@@ -41,7 +41,7 @@ public class ServletCadastrar extends HttpServlet {
                 new UsuarioDAO().cadastrar(usuario);
                 request.setAttribute("sucesso", "Usuário \"" + usuario.getNome() + "\" cadastrado com sucesso.");
             }
-            catch (UsuarioExisteException e) {
+            catch (IllegalArgumentException | IndexOutOfBoundsException | UsuarioExisteException e) {
                 erro(request, e.getMessage());
             }
             request.getRequestDispatcher("cadastrar.jsp").forward(request, response);

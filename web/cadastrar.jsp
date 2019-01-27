@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="form-group col-xs-10 col-sm-8 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-3 text-center">
                         <label for="nome">Nome de usuário:</label>
-                        <input type="text" class="form-control text-center" id="nome" placeholder="Digite seu nome" name="nome"
+                        <input type="text" maxlength="20" class="form-control text-center" id="nome" placeholder="Digite seu nome" name="nome"
                                required oninvalid="this.setCustomValidity('Entre com seu nome de usuário.')" oninput="this.setCustomValidity('')"
                                value="${nome}">
                     </div>
@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="form-group col-xs-10 col-sm-8 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-3 text-center">
                         <label for="senha">Senha:</label>
-                        <input type="password" class="form-control text-center" id="senha" placeholder="Digite uma senha" name="senha"
+                        <input type="password" maxlength="32" class="form-control text-center" id="senha" placeholder="Digite uma senha" name="senha"
                                required oninvalid="this.setCustomValidity('Entre com uma senha para seu acesso.')" oninput="this.setCustomValidity('')"
                                value="${senha}">
                     </div>

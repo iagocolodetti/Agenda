@@ -55,7 +55,7 @@
                 <div class="row">
                     <div class="form-group col-xs-10 col-sm-8 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-3 text-center">
                         <label for="novonome">Novo Nome:</label>
-                        <input type="text" class="form-control text-center" id="novonome" placeholder="Digite o novo nome" name="novonome"
+                        <input type="text" maxlength="50" class="form-control text-center" id="novonome" placeholder="Digite o novo nome" name="novonome"
                                required oninvalid="this.setCustomValidity('Entre com o novo nome do contato.')" oninput="this.setCustomValidity('')"
                                value="${novonome}">
                     </div>
@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="form-group col-xs-10 col-sm-8 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-3 text-center">
                         <label for="novoemail">Novo Email:</label>
-                        <input type="email" class="form-control text-center" id="novoemail" placeholder="Digite o novo email" name="novoemail"
+                        <input type="email" maxlength="70" class="form-control text-center" id="novoemail" placeholder="Digite o novo email" name="novoemail"
                                required oninvalid="this.setCustomValidity('Entre com o novo email do contato.')" oninput="this.setCustomValidity('')"
                                value="${novoemail}">
                     </div>
@@ -71,7 +71,7 @@
                 <div class="row">
                     <div class="form-group col-xs-10 col-sm-8 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-3 text-center">
                         <label for="novotelefone">Novo Telefone:</label>
-                        <input type="text" class="form-control text-center" id="novotelefone" placeholder="Digite o novo telefone" name="novotelefone"
+                        <input type="number" maxlength="13" class="form-control text-center" id="novotelefone" placeholder="Digite o novo telefone" name="novotelefone"
                                required oninvalid="this.setCustomValidity('Entre com o novo telefone do contato.')" oninput="this.setCustomValidity('')"
                                value="${novotelefone}">
                     </div>

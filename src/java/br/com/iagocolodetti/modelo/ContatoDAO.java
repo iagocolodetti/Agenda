@@ -10,7 +10,15 @@ import java.util.ArrayList;
 public class ContatoDAO {
     
     // Create
-    public void cadastrar(int usuario_id, Contato contato) throws ContatoExisteException {
+    public void cadastrar(int usuario_id, Contato contato) throws IndexOutOfBoundsException, IllegalArgumentException, ContatoExisteException {
+        
+        if (contato.getNome().length() > 50) throw new IndexOutOfBoundsException("Nome do contato contém mais que 50 caracteres.");
+        
+        if (contato.getEmail().contains(" ")) throw new IllegalArgumentException("Email do contato contém espaços.");
+        if (contato.getEmail().length() > 70) throw new IndexOutOfBoundsException("Email do contato contém mais que 70 caracteres.");
+        
+        if (contato.getTelefone().contains(" ")) throw new IllegalArgumentException("Telefone do contato contém espaços.");
+        if (contato.getTelefone().length() > 13) throw new IndexOutOfBoundsException("Telefone do contato contém mais que 13 caracteres.");
         
         if (contatoExiste(usuario_id, contato)) throw new ContatoExisteException();
         
@@ -125,7 +133,15 @@ public class ContatoDAO {
     }
     
     // Update
-    public void alterar(int usuario_id, Contato contato) throws ContatoExisteException, ContatoNaoExisteException {
+    public void alterar(int usuario_id, Contato contato) throws IndexOutOfBoundsException, IllegalArgumentException, ContatoExisteException, ContatoNaoExisteException {
+        
+        if (contato.getNome().length() > 50) throw new IndexOutOfBoundsException("Novo nome do contato contém mais que 50 caracteres.");
+        
+        if (contato.getEmail().contains(" ")) throw new IllegalArgumentException("Novo email do contato contém espaços.");
+        if (contato.getEmail().length() > 70) throw new IndexOutOfBoundsException("Novo email do contato contém mais que 70 caracteres.");
+        
+        if (contato.getTelefone().contains(" ")) throw new IllegalArgumentException("Novo telefone do contato contém espaços.");
+        if (contato.getTelefone().length() > 13) throw new IndexOutOfBoundsException("Novo telefone do contato contém mais que 13 caracteres.");
         
         if (contatoExiste(usuario_id, contato)) throw new ContatoExisteException();
         if (!contatoExiste(usuario_id, contato.getId())) throw new ContatoNaoExisteException();

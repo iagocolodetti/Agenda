@@ -38,7 +38,7 @@ public class ServletNovo extends HttpServlet {
                 new ContatoDAO().cadastrar(usuario.getId(), contato);
                 request.setAttribute("sucesso", "Novo contato cadastrado com sucesso.");
             }
-            catch (ContatoExisteException e) {
+            catch (IndexOutOfBoundsException | IllegalArgumentException | ContatoExisteException e) {
                 erro(request, e.getMessage());
             }
         }
