@@ -2,16 +2,16 @@
 
 Projeto desenvolvido no NetBeans utilizando a linguagem Java para WEB.
 
-A aplicaÁ„o simula uma agenda online com um cadastro/login de usu·rio, no qual cada usu·rio pode ter sua prÛpria agenda.
-… feita uma integraÁ„o com o banco de dados MySQL para o armazenamento tanto de usu·rios quanto de contatos para alimentar as agendas.
+A aplica√ß√£o simula uma agenda online com um cadastro/login de usu√°rio, no qual cada usu√°rio pode ter sua pr√≥pria agenda.
+√â feita uma integra√ß√£o com o banco de dados MySQL para o armazenamento tanto de usu√°rios quanto de contatos para alimentar as agendas.
 
-AlÈm do cadastro e login de usu·rios tambÈm È possÌvel realizar as seguintes operaÁıes: inserÁ„o, leitura, alteraÁ„o e remoÁ„o de contatos no banco.
-TambÈm È possÌvel efetuar o logout e um filtro È usado para verificar a cada requisiÁ„o se o usu·rio ainda est· logado e autenticado. 
+Al√©m do cadastro e login de usu√°rios tamb√©m √© poss√≠vel realizar as seguintes opera√ß√µes: inser√ß√£o, leitura, altera√ß√£o e remo√ß√£o de contatos no banco.
+Tamb√©m √© poss√≠vel efetuar o logout e um filtro √© usado para verificar a cada requisi√ß√£o se o usu√°rio ainda est√° logado e autenticado. 
 
-AplicaÁ„o criada com o padr„o MVC, utilizando classe Java como modelo, p·gina JSP como view (com Bootstrap 3 e JSTL) e Servlet como controller.
+Aplica√ß√£o criada com o padr√£o MVC, utilizando classe Java como modelo, p√°gina JSP como view (com Bootstrap 3 e JSTL) e Servlet como controller.
 
 * Downloads: https://github.com/iagocolodetti/Agenda/releases
-   * [Arquivo de ImplantaÁao](https://github.com/iagocolodetti/Agenda/releases/download/v2.0/Agenda.war "Agenda.war")
-   * [Arquivo de Script MySQL](https://github.com/iagocolodetti/Agenda/releases/download/v2.0/agendadb.sql "agendadb.sql")
-   * [Bibliotecas necess·rias](https://github.com/iagocolodetti/Agenda/releases/download/v2.0/bibliotecas.zip "bibliotecas.zip")
-   * [CÛdigo-Fonte](https://github.com/iagocolodetti/Agenda/archive/v2.0.zip "v2.0.zip")
+   * [Arquivo de Implanta√ßao](https://github.com/iagocolodetti/Agenda/releases/download/v2.0.1/Agenda.war "Agenda.war")
+   * [Arquivo de Script MySQL](https://github.com/iagocolodetti/Agenda/releases/download/v2.0.1/agendadb.sql "agendadb.sql")
+   * [Bibliotecas necess√°rias](https://github.com/iagocolodetti/Agenda/releases/download/v2.0.1/bibliotecas.zip "bibliotecas.zip")
+   * [C√≥digo-Fonte](https://github.com/iagocolodetti/Agenda/archive/v2.0.1.zip "v2.0.1.zip")
