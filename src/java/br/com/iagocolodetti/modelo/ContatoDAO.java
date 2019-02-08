@@ -113,8 +113,9 @@ public class ContatoDAO {
         boolean existe = false;
         
         try {
-            ps = con.prepareStatement("SELECT id FROM contato WHERE id = ?");
+            ps = con.prepareStatement("SELECT id FROM contato WHERE id = ? and usuario_id = ?");
             ps.setInt(1, contato_id);
+            ps.setInt(2, usuario_id);
 
             rs = ps.executeQuery();
 
