@@ -11,7 +11,7 @@ Também é possível efetuar o logout e um filtro é usado para verificar a cada
 Aplicação criada com o padrão MVC, utilizando classe Java como modelo, página JSP como view (com Bootstrap 3 e JSTL) e Servlet como controller.
 
 * Downloads: https://github.com/iagocolodetti/Agenda/releases
-   * [Arquivo de Implantação](https://github.com/iagocolodetti/Agenda/releases/download/v2.1.1/Agenda.war "Agenda.war")
-   * [Arquivo de Script MySQL](https://github.com/iagocolodetti/Agenda/releases/download/v2.1.1/agendadb.sql "agendadb.sql")
-   * [Bibliotecas Necessárias](https://github.com/iagocolodetti/Agenda/releases/download/v2.1.1/bibliotecas.zip "bibliotecas.zip")
-   * [Código-Fonte](https://github.com/iagocolodetti/Agenda/archive/v2.1.1.zip "v2.1.1.zip")
+   * [Arquivo de Implantação](https://github.com/iagocolodetti/Agenda/releases/download/v2.2/Agenda.war "Agenda.war")
+   * [Arquivo de Script MySQL](https://github.com/iagocolodetti/Agenda/releases/download/v2.2/agendadb.sql "agendadb.sql")
+   * [Bibliotecas Necessárias](https://github.com/iagocolodetti/Agenda/releases/download/v2.2/bibliotecas.zip "bibliotecas.zip")
+   * [Código-Fonte](https://github.com/iagocolodetti/Agenda/archive/v2.2.zip "v2.2.zip")
