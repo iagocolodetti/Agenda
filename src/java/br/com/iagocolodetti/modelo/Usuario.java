@@ -1,25 +1,31 @@
 package br.com.iagocolodetti.modelo;
 
-public class Usuario {
+/**
+ *
+ * @author iagocolodetti
+ */
+public class Usuario implements java.io.Serializable {
     
+    private static final long serialVersionUID = -1853712843268014785L;
+
     private int id;
     private String nome, senha;
 
     public Usuario() {
-        
+
     }
-    
+
     public Usuario(String nome, String senha) {
         this.nome = nome;
         this.senha = senha;
     }
-    
+
     public Usuario(int id, String nome, String senha) {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
     }
-    
+
     public int getId() {
         return id;
     }

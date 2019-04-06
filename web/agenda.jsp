@@ -1,3 +1,4 @@
+<!-- iagocolodetti -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c"%>
 <!DOCTYPE html>
@@ -41,8 +42,8 @@
                                     <th class="text-center" onclick="sortTable(0)">NOME</th>
                                     <th class="text-center" onclick="sortTable(1)">EMAIL</th>
                                     <th class="text-center" onclick="sortTable(2)">TELEFONE</th>
-                                    <th class="text-center">ALTERAR</th>
-                                    <th class="text-center">REMOVER</th>
+                                    <th class="text-center" style="cursor:text">ALTERAR</th>
+                                    <th class="text-center" style="cursor:text">REMOVER</th>
                                 </thead>
                                 <c:forEach items="${contatos}" var="contato">
                                     <tr>

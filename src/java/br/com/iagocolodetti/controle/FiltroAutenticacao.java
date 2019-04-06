@@ -9,19 +9,23 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ *
+ * @author iagocolodetti
+ */
 public class FiltroAutenticacao implements Filter {
-    
+
     @Override
     public void init(FilterConfig filterConfig) {
-        
+
     }
-    
+
     @Override
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
-        
-        HttpServletRequest rq = (HttpServletRequest)request;
+
+        HttpServletRequest rq = (HttpServletRequest) request;
         if (rq.getSession().isNew() || rq.getSession().getAttribute("usuario") == null) {
             rq.setAttribute("erro", "Sessão expirada, faça o login novamente.");
             rq.getSession().invalidate();
@@ -30,9 +34,9 @@ public class FiltroAutenticacao implements Filter {
 
         chain.doFilter(request, response);
     }
-    
+
     @Override
-    public void destroy() {   
-        
+    public void destroy() {
+
     }
 }
